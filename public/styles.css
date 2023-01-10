@@ -1,4 +1,82 @@
 body {
-    background-color: pink;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dddddd;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+input, textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #dddddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+}
+
+#deleteBtn {
+    text-decoration: none;
+    color: #4CAF50;
+    margin-top: 1em;
+    display: block;
+    text-align: right;
+}
+
+#deleteBtn:hover {
+    color: #3e8e41;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
 }

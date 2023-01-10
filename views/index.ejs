@@ -1,20 +1,10 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/styles.css">
 <html>
   <head>
     <title>Note app</title>
   </head>
   <body>
-
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
     <main>
 
@@ -28,21 +18,22 @@
             <button type="submit">Create</button>
           </form>
     </main>
-
     <ul>
         <% for (let i = 0; i < listOfNotes.length; i++) {%>
         <li>
             <h2><%= listOfNotes[i].title%></h2>
-            <p><% listOfNotes[i].content%></p>
-            <a href="/deleteListofNotes/<%= listOfNotes[i].id %>">Delete</a>
+            <p><%= listOfNotes[i].contents%></p>
+
+            <form action="/deleteNote" method="post" id="deleteBtn">
+                <input type="hidden" name="id" value="<%= listOfNotes[i].id %>">
+                <button type="submit">Delete</button>
+              </form>
         </li>
         <% } %>
     </ul>
 
-
-    <!-- list a thing of notes "listOfNotes" -->
     <footer>
-      <p>Copyright © 2021 My Name</p>
+      <p>Copyright © 2021 Haley Dawe</p>
     </footer>
   </body>
 </html>

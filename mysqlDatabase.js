@@ -24,29 +24,16 @@ export async function getNotes(){
     return rows
 }
 
-// async function getNotes(id) {
-//     let query =`
-//     SELECT *
-//     FROM notes
-//     WHERE id = ?`
-// }
-
 
 export async function addNote(title, content) {
-    const [result] = await pool.query(`
-    INSERT INTO notes (title, contents)
-    VALUES (?, ?)
-    `, [data.title, data.contents])
-    return result
+const query = `
+INSERT INTO notes (title, contents)
+VALUES (?,?)
+`
+await pool.query(query, [title, content])
+
 }
 
-// export function addNotes(title, content) {
-//     notes.push({
-//         id: notes.length=1,
-//         title,
-//         content
-//     })
-// }
 
 export async function deleteNote(id) {
     const [result] = await pool.query(`
@@ -55,9 +42,3 @@ export async function deleteNote(id) {
     `, [id])
     return result
 }
-
-
-// export function deleteNote(id) {
-//     notes.splice(id-1, 1)
-//     res.redirect('/')
-// }
